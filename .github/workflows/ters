@@ -1,0 +1,31 @@
+on: push
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      with:
+        args: https://htt
+
+
+pbin.org/get
+
+
+on: [push]
+
+jobs:
+
+  build:
+      name: Run Script
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Install Terrascan
+      run: |
+        curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_x86_64.tar.gz")" > terrascan.tar.gz
+        tar -xf terrascan.tar.gz terrascan && rm terrascan.tar.gz
+        sudo install terrascan /usr/local/bin && rm terrascan
+        
+    - name: Terrascan Scan
+      run: |
+        terrascan -c .\*

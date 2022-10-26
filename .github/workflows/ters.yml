@@ -12,4 +12,4 @@ on: [push]
         
     - name: Terrascan Scan
       run: |
-        terrascan -t all
+        terrascan scan -i terraform

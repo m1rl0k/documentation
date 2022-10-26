@@ -1,16 +1,3 @@
-on: push
-jobs:
-  curl:
-    runs-on: ubuntu-latest
-    steps:
-    - name: curl
-      with:
-        args: https://htt
-
-
-pbin.org/get
-
-
 on: [push]
 
 jobs:

@@ -19,7 +19,7 @@ jobs:
       name: Run Script
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v1
+        - uses: actions/checkout@v3
         - name: Install Terrascan
       run: |
         curl -L "$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest | grep -o -E "https://.+?_Linux_x86_64.tar.gz")" > terrascan.tar.gz

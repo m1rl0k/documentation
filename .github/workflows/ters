@@ -28,4 +28,4 @@ jobs:
         
     - name: Terrascan Scan
       run: |
-        terrascan -c .\*
+        terrascan -t all

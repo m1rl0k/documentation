@@ -1,7 +1,5 @@
 on: [push]
 
-jobs:
-
   build:
       name: Run Script
       runs-on: ubuntu-latest

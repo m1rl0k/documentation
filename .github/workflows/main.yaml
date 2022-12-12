@@ -1,0 +1,19 @@
+name: Protect critical files
+
+on:
+ pull_request:
+   types: [opened, synchronize]
+
+jobs:
+ protect-files:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout repository
+       uses: actions/checkout@v2
+
+     - name: Protect critical files
+       uses: jenca-cloud/protect-file-action@v1
+       with:
+         paths: "/"
+         status: pending
+         reviewers: "reviewer1, reviewer2"
